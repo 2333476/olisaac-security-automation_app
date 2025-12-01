@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- outer frame -->
+  <rect x="12" y="18" width="96" height="70" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="3"></rect>
+
+  <!-- screen -->
+  <rect x="22" y="28" width="76" height="40" rx="6" fill="#a7f3d0" stroke="#111827" stroke-width="3"></rect>
+
+  <!-- little text lines -->
+  <g stroke="#111827" stroke-width="3" stroke-linecap="round">
+    <line x1="28" y1="38" x2="80" y2="38"></line>
+    <line x1="28" y1="48" x2="70" y2="48"></line>
+    <line x1="28" y1="58" x2="88" y2="58"></line>
+  </g>
+
+  <!-- bottom buttons -->
+  <circle cx="40" cy="78" r="4" fill="#111827"></circle>
+  <circle cx="60" cy="78" r="4" fill="#111827"></circle>
+  <circle cx="80" cy="78" r="4" fill="#111827"></circle>
+
+  <!-- tiny stand -->
+  <rect x="48" y="92" width="24" height="6" rx="3" fill="#111827"></rect>
+</svg>

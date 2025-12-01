@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- speaker body -->
+  <rect x="18" y="40" width="28" height="40" rx="6" fill="#9ca3af" stroke="#111827" stroke-width="3"></rect>
+
+  <!-- speaker cone -->
+  <polygon points="46,48 66,36 66,84 46,72" fill="#d1d5db" stroke="#111827" stroke-width="3" stroke-linejoin="round"></polygon>
+
+  <!-- inner speaker circle -->
+  <circle cx="30" cy="60" r="8" fill="#111827"></circle>
+
+  <!-- sound waves -->
+  <g fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round">
+    <path d="M74 48 Q84 60 74 72"></path>
+    <path d="M84 40 Q98 60 84 80"></path>
+    <path d="M94 32 Q112 60 94 88"></path>
+  </g>
+</svg>

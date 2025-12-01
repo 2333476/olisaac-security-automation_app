@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}System Overview{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/SystemOverView.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h1 class="reveal delay-1">System Overview</h1>
+
+<div class="temp-pres-humi-value reveal delay-2">
+    <div class="overview-card">
+        <img class="sensor-icon" src="{{ url_for('static', filename='images/temp.png') }}" alt="temperature icon">
+        <h3 class="sensor-title">TEMPERATURE</h3>
+        <p class="sensor-value"><span id="temp-value"></span> °C</p>
+        <p class="update-text">Last updated: <span id="temp-update"></span></p>
+    </div>
+
+    <div class="overview-card">
+        <img class="sensor-icon" src="{{ url_for('static', filename='images/humidity.jpg') }}" alt="humidity icon">
+        <h3 class="sensor-title">HUMIDITY</h3>
+        <p class="sensor-value"><span id="humidity-value"></span> %</p>
+        <p class="update-text">Last updated: <span id="humidity-update"></span></p>
+    </div>
+
+    <div class="overview-card">
+        <img class="sensor-icon" src="{{ url_for('static', filename='images/pressure.jpg') }}" alt="pressure icon">
+        <h3 class="sensor-title">PRESSURE</h3>
+        <p class="sensor-value"><span id="pressure-value"></span> hPa</p>
+        <p class="update-text">Last updated: <span id="pressure-update"></span></p>
+    </div>
+</div>
+
+<div class="security_quick_actions reveal delay-3">
+
+    <!-- SECURITY SUMMARY BOX -->
+    <div class="security">
+        <div class="security-header">
+            <img src="{{ url_for('static', filename='images/shield.png') }}"
+                 class="security-header-icon" alt="security icon">
+            <span>Security System</span>
+        </div>
+
+        <div class="security-main">
+            <img src="{{ url_for('static', filename='images/shield_red.svg') }}"
+                 class="security-main-icon" id="sec-main-icon" alt="security status icon">
+
+            <div id="sec-status-pill" class="security-status-pill sec-alert">
+                ALERT
+            </div>
+
+            <div class="security-events">
+                <span>Motion Events: <span id="sec-motion-count">0</span></span>
+                <span>Smoke Events: <span id="sec-smoke-count">0</span></span>
+            </div>
+
+            <p class="security-last-update">
+                Last event: <span id="sec-last-update">--</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+<div class="quick_actions">
+    <div class="qa-header">
+        <img src="{{ url_for('static', filename='images/bubble_light.png') }}"
+             class="qa-header-icon" alt="quick actions icon">
+        <span>Quick Actions</span>
+    </div>
+
+    <a class="qa-btn environment_button"
+       href="{{ url_for('environment_monitoring') }}">
+        <img src="{{ url_for('static', filename='images/temp.png') }}"
+             class="action-icon" alt="environment icon">
+        <span>View Environment</span>
+    </a>
+
+    <a class="qa-btn security_button"
+       href="{{ url_for('security_monitoring') }}">
+        <img src="{{ url_for('static', filename='images/shield.png') }}"
+             class="action-icon" alt="security icon">
+        <span>Manage Security</span>
+    </a>
+
+    <a class="qa-btn device_button"
+       href="{{ url_for('device_control') }}">
+        <img src="{{ url_for('static', filename='images/bubble_light.png') }}"
+             class="action-icon" alt="devices icon">
+        <span>Control Devices</span>
+    </a>
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/SystemOverView.js') }}" defer></script>
+{% endblock %}

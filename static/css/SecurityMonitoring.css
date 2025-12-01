@@ -1,0 +1,342 @@
+/* ------- PAGE TITLE ------- */
+.page-title {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+/* ------- SECURITY CONTROL CARD ------- */
+
+.security-control-card {
+  width: 90%;
+  max-width: 900px;
+  margin: 6px auto;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.security-control-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.security-control-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-image: linear-gradient(to right, #1f2937, #2563eb);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.sec-header-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* corps : centré, pill au milieu */
+.security-control-body {
+  padding: 10px 14px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.security-control-subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* pill */
+.status-pill {
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* SAFE (vert) */
+.status-low {
+  background-color: #22c55e;
+  color: #ffffff;
+  box-shadow: 0 0 0 rgba(34, 197, 94, 0.0);
+}
+
+/* MODERATE (jaune) */
+.status-medium {
+  background-color: #facc15;
+  color: #111827;
+}
+
+/* ALERT (rouge) */
+.status-high {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* border + glow de la card selon le niveau */
+.card-low {
+  border-color: #22c55e;
+  box-shadow: 0 6px 14px rgba(34, 197, 94, 0.15);
+  animation: safe-glow 3s ease-in-out infinite;
+}
+
+.card-medium {
+  border-color: #facc15;
+  box-shadow: 0 6px 14px rgba(250, 204, 21, 0.18);
+  animation: medium-pulse 2.4s ease-in-out infinite;
+}
+
+.card-high {
+  border-color: #ef4444;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.25);
+  animation: alert-border 1s ease-in-out infinite;
+}
+
+/* ====== ANIMATIONS NIVEAU DE SÉCURITÉ ====== */
+
+/* SAFE : petit glow vert doux */
+@keyframes safe-glow {
+  0% {
+    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.10);
+  }
+  50% {
+    box-shadow: 0 10px 22px rgba(34, 197, 94, 0.25);
+  }
+  100% {
+    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.10);
+  }
+}
+
+/* MODERATE : léger pulsing jaune */
+@keyframes medium-pulse {
+  0% {
+    box-shadow: 0 6px 14px rgba(250, 204, 21, 0.12);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 9px 20px rgba(250, 204, 21, 0.30);
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 6px 14px rgba(250, 204, 21, 0.12);
+    transform: scale(1);
+  }
+}
+
+/* ALERT : border qui clignote */
+@keyframes alert-border {
+  0% {
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.30);
+    border-color: #ef4444;
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(239, 68, 68, 0.65);
+    border-color: #fee2e2;
+  }
+  100% {
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.30);
+    border-color: #ef4444;
+  }
+}
+
+/* ALERT : pill qui pulse */
+@keyframes alert-pill {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(239, 68, 68, 0.0);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.75);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(239, 68, 68, 0.0);
+  }
+}
+
+.status-high {
+  animation: alert-pill 1s ease-in-out infinite;
+}
+
+/* ------- HISTORICAL DATA ------- */
+
+.history-bloc {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 900px;
+  margin: 6px auto 8px auto;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.history-bloc-title {
+  background: linear-gradient(to right, #00408b, #2ea8ff);
+  width: 100%;
+  color: white;
+  padding: 8px 14px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.history-bloc-body {
+  padding: 10px 14px;
+  background-color: white;
+  font-size: 14px;
+}
+
+#security_date_input {
+  border-radius: 8px;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+}
+
+/* ------- BOTTOM CHARTS ------- */
+
+.security-charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 0 12px 12px;
+  box-sizing: border-box;
+}
+
+.security-card {
+  background-color: white;
+  border-radius: 15px;
+  flex: 1 1 320px;
+  max-width: 480px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.security-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to right, #00408b, #2ea8ff);
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.security-card-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.security-card-body {
+  flex: 1;
+  padding: 8px 12px 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-summary {
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: 2px;
+}
+
+.events-number {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.events-label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.security-chart-canvas {
+  flex: 1;
+  width: 100%;
+}
+
+.security-chart-canvas canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ====== ANIMATION D’ENTRÉE (FADE + SLIDE UP) ====== */
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* on applique l’animation de haut en bas */
+.page-title,
+.security-control-card,
+.history-bloc,
+.security-charts-row .security-card {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fade-slide-up 0.6s ease-out forwards;
+}
+
+/* décalage dans le temps (effet cascade) */
+.page-title {
+  animation-delay: 0.05s;
+}
+
+.security-control-card {
+  animation-delay: 0.18s;
+}
+
+.history-bloc {
+  animation-delay: 0.31s;
+}
+
+.security-charts-row .security-card:nth-child(1) {
+  animation-delay: 0.44s;
+}
+
+.security-charts-row .security-card:nth-child(2) {
+  animation-delay: 0.54s;
+}

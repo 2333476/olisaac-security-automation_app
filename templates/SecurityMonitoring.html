@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Security Monitoring{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/SecurityMonitoring.css') }}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/SecurityMonitoring.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="page-title">Security Monitoring</h1>
+
+<!-- SECURITY SYSTEM CONTROL -->
+<div class="security-control-card card-low">
+  <div class="security-control-header">
+    <img src="{{ url_for('static', filename='images/shield.png') }}" class="sec-header-icon" alt="security icon">
+    <span>Security System Control</span>
+  </div>
+
+  <div class="security-control-body">
+    <p class="security-control-subtitle">
+      Status based on recent motion activity
+    </p>
+
+    <span id="securityStatus" class="status-pill status-low">
+      SAFE
+    </span>
+  </div>
+</div>
+
+<div class="history-bloc">
+  <p class="history-bloc-title">Historical Data</p>
+  <div class="history-bloc-body">
+    <label for="security_date_input">Select Date:</label><br>
+    <input type="date" id="security_date_input" />
+  </div>
+</div>
+
+<div class="security-charts-row">
+
+  <!-- Motion Feed -->
+  <div class="security-card">
+    <p class="security-card-title">
+      <img src="{{ url_for('static', filename='images/title_pattern.svg') }}"
+           alt="" class="security-card-icon">
+      Motion Feed
+    </p>
+    <div class="security-card-body">
+      <div class="events-summary">
+        <span id="motionWindowTotal" class="events-number">0</span>
+        <span class="events-label">events in last window</span>
+      </div>
+      <div class="security-chart-canvas">
+        <canvas id="motionChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Smoke Feed -->
+  <div class="security-card">
+    <p class="security-card-title">
+      <img src="{{ url_for('static', filename='images/title_pattern.svg') }}"
+           alt="" class="security-card-icon">
+      Smoke Feed
+    </p>
+    <div class="security-card-body">
+      <div class="events-summary">
+        <span id="smokeWindowTotal" class="events-number">0</span>
+        <span class="events-label">events in last window</span>
+      </div>
+      <div class="security-chart-canvas">
+        <canvas id="smokeChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

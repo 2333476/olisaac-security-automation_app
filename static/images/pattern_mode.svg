@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- three small LEDs in a row -->
+  <circle cx="28" cy="35" r="10" fill="#22c55e" stroke="#111827" stroke-width="3"></circle>
+  <circle cx="60" cy="35" r="10" fill="#facc15" stroke="#111827" stroke-width="3"></circle>
+  <circle cx="92" cy="35" r="10" fill="#ef4444" stroke="#111827" stroke-width="3"></circle>
+
+  <!-- arrows showing sequence -->
+  <g fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 35 H50"></path>
+    <path d="M70 35 H82"></path>
+    <path d="M48 31 L50 35 L48 39"></path>
+    <path d="M80 31 L82 35 L80 39"></path>
+  </g>
+
+  <!-- waveform / blink pattern line -->
+  <g fill="none" stroke="#111827" stroke-width="3" stroke-linecap="round">
+    <path d="M15 75 H30 V60 H45 V85 H60 V65 H75 V80 H90 V55 H105"></path>
+  </g>
+
+  <!-- label dots -->
+  <circle cx="15" cy="75" r="3" fill="#111827"></circle>
+  <circle cx="105" cy="75" r="3" fill="#111827"></circle>
+</svg>

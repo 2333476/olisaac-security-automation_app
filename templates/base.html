@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Security Automation{% endblock %}</title>
+
+    <!-- CSS commun : fond + navbar + styles généraux -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/DeviceControl.css') }}">
+
+    {# CSS spécifique à une page si besoin #}
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- NAVBAR COMMUNE -->
+    <div class="navbar">
+        <div class="navbar-right">
+
+            <a class="nav-icon" href="{{ url_for('system_overview') }}">
+                <img src="{{ url_for('static', filename='images/nav_summary.svg') }}" class="nav-img" alt="">
+                Summary
+            </a>
+
+            <a class="nav-icon" href="{{ url_for('environment_monitoring') }}">
+                <img src="{{ url_for('static', filename='images/nav_environment.svg') }}" class="nav-img" alt="">
+                Environment
+            </a>
+
+            <a class="nav-icon" href="{{ url_for('security_monitoring') }}">
+    <img src="{{ url_for('static', filename='images/nav_security.svg') }}" class="nav-img" alt="">
+    Security
+</a>
+
+
+            <a class="nav-icon" href="{{ url_for('device_control') }}">
+                <img src="{{ url_for('static', filename='images/nav_devices.svg') }}" class="nav-img" alt="">
+                Device
+            </a>
+
+        </div>
+    </div>
+
+    <!-- CONTENU SPÉCIFIQUE À CHAQUE PAGE -->
+    <div class="page-container">
+        {% block content %}{% endblock %}
+    </div>
+
+    {# JS spécifique à une page #}
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

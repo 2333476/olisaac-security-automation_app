@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Device Control{% endblock %}
+
+{% block extra_css %}
+{# rien: DeviceControl.css est déjà global via base.html #}
+{% endblock %}
+
+{% block content %}
+
+    <div class="title-row reveal delay-1">
+
+        <h1 class="page-title">
+            <img src="{{ url_for('static', filename='images/title_device.svg') }}"
+                 class="page-icon" alt="device icon">
+            Device Control
+        </h1>
+
+        <div class="all-inline">
+            <img src="{{ url_for('static', filename='images/all_lights.svg') }}"
+                 class="title-icon" alt="all leds">
+            <span class="all-title">All LEDs</span>
+
+            <button class="btn apply" id="allToggle">TURN ALL ON</button>
+
+            <button class="state-btn off" id="allState" style="display:none;">OFF</button>
+        </div>
+
+    </div>
+
+    <div class="top-area reveal delay-2">
+
+        <div class="led-cards">
+
+            <div class="box">
+                <div class="box-title">
+                    <img src="{{ url_for('static', filename='images/title_led.svg') }}"
+                         class="title-icon" alt="">
+                    Green LED
+                </div>
+
+                <img src="{{ url_for('static', filename='images/green_light.svg') }}"
+                     class="device-icon" alt="green led">
+
+                <button class="state-btn off" id="greenState">OFF</button>
+
+                <div class="buttons">
+                    <button class="btn on" name="GREEN_LIGHT_ON">ON</button>
+                    <button class="btn off" name="GREEN_LIGHT_OFF">OFF</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">
+                    <img src="{{ url_for('static', filename='images/title_led.svg') }}"
+                         class="title-icon" alt="">
+                    Red LED
+                </div>
+
+                <img src="{{ url_for('static', filename='images/red_light.svg') }}"
+                     class="device-icon" alt="red led">
+
+                <button class="state-btn off" id="redState">OFF</button>
+
+                <div class="buttons">
+                    <button class="btn on" name="RED_LIGHT_ON">ON</button>
+                    <button class="btn off" name="RED_LIGHT_OFF">OFF</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">
+                    <img src="{{ url_for('static', filename='images/title_led.svg') }}"
+                         class="title-icon" alt="">
+                    Yellow LED
+                </div>
+
+                <img src="{{ url_for('static', filename='images/yellow_light.svg') }}"
+                     class="device-icon" alt="yellow led">
+
+                <button class="state-btn off" id="yellowState">OFF</button>
+
+                <div class="buttons">
+                    <button class="btn on" name="YELLOW_LIGHT_ON">ON</button>
+                    <button class="btn off" name="YELLOW_LIGHT_OFF">OFF</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bottom-area reveal delay-3">
+
+        <div class="box">
+            <div class="box-title">
+                <img src="{{ url_for('static', filename='images/title_buzzer.svg') }}"
+                     class="title-icon" alt="">
+                Buzzer Switch
+            </div>
+
+            <img src="{{ url_for('static', filename='images/buzzer.svg') }}"
+                 class="device-icon small" alt="buzzer">
+
+            <button class="state-btn off" id="buzzerState">OFF</button>
+
+            <div class="buttons">
+                <button class="btn on" name="BUZZER_ON">ON</button>
+                <button class="btn off" name="BUZZER_OFF">OFF</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-title">
+                <img src="{{ url_for('static', filename='images/title_lcd.svg') }}"
+                     class="title-icon" alt="">
+                LCD Switch
+            </div>
+
+            <img src="{{ url_for('static', filename='images/lcd_screen.svg') }}"
+                 class="device-icon small" alt="lcd">
+
+            <button class="state-btn off" id="lcdState">OFF</button>
+
+            <div class="buttons">
+                <button class="btn on" name="LCD_ON">ON</button>
+                <button class="btn off" name="LCD_OFF">OFF</button>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/DeviceControl.js') }}"></script>
+{% endblock %}

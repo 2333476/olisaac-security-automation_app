@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Environment Monitoring{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/EnvironmentMonitoring.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h1 class="reveal delay-1">Environment Monitoring</h1>
+
+<div class="history-bloc reveal delay-2">
+    <p class="history-bloc-title">Historical Data</p>
+    <div class="history-bloc-body">
+        <label for="input_date_id">Select Date:</label><br>
+        <input type="date" name="date_input" id="input_date_id"/>
+    </div>
+</div>
+
+<div class="charts-bloc reveal delay-3">
+
+    <div class="sensor-card temp-chart">
+        <p class="chart-title">Temperature</p>
+        <div class="chart-body">
+            <div class="current-value">
+                <span id="currentTemp" class="current-number">--</span>
+                <span class="current-unit">°C</span>
+            </div>
+            <div class="chart-canvas">
+                <canvas id="tempChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="sensor-card humidity-chart">
+        <p class="chart-title">Humidity</p>
+        <div class="chart-body">
+            <div class="current-value">
+                <span id="currentHum" class="current-number">--</span>
+                <span class="current-unit">%</span>
+            </div>
+            <div class="chart-canvas">
+                <canvas id="humidityChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="sensor-card pressure-chart">
+        <p class="chart-title">Pressure</p>
+        <div class="chart-body">
+            <div class="current-value">
+                <span id="currentPres" class="current-number">--</span>
+                <span class="current-unit">hPa</span>
+            </div>
+            <div class="chart-canvas">
+                <canvas id="pressureChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/EnvironmentMonitoring.js') }}" defer></script>
+{% endblock %}

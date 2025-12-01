@@ -1,0 +1,260 @@
+h1 {
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 10px;
+}
+
+/* -------- TOP 3 CARDS -------- */
+
+.temp-pres-humi-value {
+    max-width: 1200px;
+    margin: 18px auto 16px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    flex-wrap: nowrap;
+}
+
+.overview-card {
+    flex: 1;
+    min-width: 0;
+    padding: 26px 32px 22px 32px;
+    background-color: white;
+    border-radius: 26px;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sensor-icon {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.sensor-title {
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.sensor-value {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.update-text {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+}
+
+/* permet de repasser en 2/1 colonnes sur petits écrans */
+@media (max-width: 1100px) {
+    .temp-pres-humi-value {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .overview-card {
+        flex: 1 1 260px;
+    }
+}
+
+/* -------- BOTTOM ROW: SECURITY + QUICK ACTIONS -------- */
+
+.security_quick_actions {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 12px auto 24px auto;
+    flex-wrap: wrap;
+}
+
+/* ========== SECURITY SUMMARY CARD ========== */
+
+.security {
+    background-color: white;
+    border-radius: 22px;
+    flex: 1 1 420px;
+    min-width: 320px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.security-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    background-image: linear-gradient(to right, #1f2937, #2563eb);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.security-header-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.security-main {
+    padding: 16px 20px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.security-main-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 2px;
+}
+
+/* pill au centre */
+
+.security-status-pill {
+    padding: 8px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* couleurs, à changer via JS en ajoutant / retirant ces classes */
+
+.sec-safe {
+    background-color: #22c55e;
+}
+
+.sec-moderate {
+    background-color: #facc15;
+    color: #111827;
+}
+
+.sec-alert {
+    background-color: #ef4444;
+}
+
+/* Motion / Smoke events */
+
+.security-events {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    color: #111827;
+}
+
+.security-events span span {
+    font-weight: 600;
+}
+
+.security-last-update {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* -------- QUICK ACTIONS CARD -------- */
+
+.quick_actions {
+    background-color: #ffffff;
+    border-radius: 22px;
+    flex: 1 1 420px;
+    min-width: 360px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* bande du haut "Quick Actions" */
+.qa-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: linear-gradient(to right, #00408b, #2ea8ff);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.qa-header-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 4px;
+}
+
+/* boutons = gros pill centrés, avec bord blanc */
+.qa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 18px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
+}
+
+.qa-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.05);
+}
+
+.action-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* couleurs des 3 actions */
+
+.environment_button {
+    background-color: #006dff;
+    color: #ffffff;
+}
+
+.security_button {
+    background-color: #ffc400;
+    color: #111827;
+}
+
+.device_button {
+    background-color: #32d3f5;
+    color: #111827;
+}
+
+@media (max-width: 900px) {
+    .security_quick_actions {
+        flex-direction: column;
+    }
+}
