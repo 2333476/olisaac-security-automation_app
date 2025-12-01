@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from db import get_readings_for_date
 from dotenv import load_dotenv
+from flask import redirect, url_for
 
 print(load_dotenv())
 
@@ -18,6 +19,9 @@ FEED_MOTION = "motion-feed"
 FEED_SMOKE = "smoke-feed"
 appFlask = Flask(__name__)
 
+@appFlask.route("/")
+def home():
+    return redirect("/SystemOverView")
 
 @appFlask.route("/SystemOverView")
 def system_overview():
