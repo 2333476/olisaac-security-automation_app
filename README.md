@@ -1,11 +1,11 @@
 🏠 IoT Home Automation and Security System
-Project Title
 
+Project Title:
 IoT Home Automation and Security System
 
 Team Members
-Olivier Goudreault
 
+Olivier Goudreault,
 Isaac Nachate
 
 Adafruit IO Dashboard
@@ -16,8 +16,10 @@ Screenshots if it`s private:
 <img width="1919" height="861" alt="image" src="https://github.com/user-attachments/assets/1b2d888d-af09-4303-9a54-d5b4049d2748" />
 <img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/ebb4d5cb-d677-4b48-8806-624a4c25c72a" />
 
-Public Cloud Folder
+Public Cloud Folder:
+
 https://drive.google.com/file/d/18V_kAMAWa6RXmHdjIwT-zXNd9iNX4CGd/view (Go in the DemoSafe folder and our data is at the bottom)
+
 
 Short Reflection
 
