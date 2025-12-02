@@ -1,13 +1,16 @@
 🏠 IoT Home Automation and Security System
 Project Title
+
 IoT Home Automation and Security System
 
 Team Members
 Olivier Goudreault
+
 Isaac Nachate
 
 Adafruit IO Dashboard
 🔗 Dashboard link:
+
 https://io.adafruit.com/isaac_nachate/dashboards/buzzer-control
 Screenshots if it`s private:
 <img width="1919" height="861" alt="image" src="https://github.com/user-attachments/assets/1b2d888d-af09-4303-9a54-d5b4049d2748" />
