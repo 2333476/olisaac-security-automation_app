@@ -1,4 +1,4 @@
-🏠 IoT Home Automation and Security System
+IoT Home Automation and Security System
 
 Project Title:
 IoT Home Automation and Security System
